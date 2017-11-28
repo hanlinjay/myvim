@@ -16,10 +16,6 @@ set selection=exclusive
 set selectmode=mouse,key
 
 
-
-
-
-
 if &term=="xterm"
      set t_Co=8
      set t_Sb=^[[4%dm
@@ -27,9 +23,25 @@ if &term=="xterm"
 endif
 
 
-
 "pathogen config
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 Helptags
+
+
+"ctrlp config
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+"vim-airline config
+let g:airline_powerline_fonts = 1
+
+"nerdtree config
+autocmd VimEnter * NERDTree
+map :silent! NERDTreeToggle
+"map <leader>t :NERDTreeToggle<CR>
+let NERDTreeWinPos="right"
+let NERDTreeShowLineNumbers=1
+let NERDTreeAutoCenter=1
+let NERDTreeShowHidden=1
